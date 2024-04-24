@@ -1,0 +1,36 @@
+{
+    "name": "ronappleton/php-datatable",
+    "description": "Library for producing datatables results from datatable input in php.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Appleton\\Datatable\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ron Appleton",
+            "email": "ron.appleton@gmail.com"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "laravel/framework": ">=9",
+        "phpunit/phpunit": "^10.5",
+        "mockery/mockery": "^1.6",
+        "larastan/larastan": "^2.9",
+        "orchestra/testbench": "^8.22"
+    },
+    "scripts": {
+        "test": "phpunit --bootstrap vendor/autoload.php tests/ --colors=always --coverage-text --coverage-html=coverage.xml",
+        "stan": "php vendor/bin/phpstan analyse src"
+    }
+}
