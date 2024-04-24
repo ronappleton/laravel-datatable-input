@@ -22,4 +22,29 @@ class ColumnTest extends TestCase
 
         $this->assertSame('testMacro', $column->testMacro());
     }
+
+    public function testColumnToArrayReturnsColumnArray(): void
+    {
+        $column = new Column([
+            'data' => 'id',
+            'name' => 'id',
+            'searchable' => true,
+            'orderable' => true,
+            'search' => [
+                'value' => '',
+                'regex' => false,
+            ],
+        ]);
+
+        $this->assertSame([
+            'data' => 'id',
+            'name' => 'id',
+            'searchable' => true,
+            'orderable' => true,
+            'search' => [
+                'value' => '',
+                'regex' => false,
+            ],
+        ], $column->toArray());
+    }
 }

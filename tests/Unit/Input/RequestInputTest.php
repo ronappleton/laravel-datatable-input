@@ -234,4 +234,37 @@ class RequestInputTest extends TestCase
 
         $this->assertNull($requestInput->getColumnByIndex(0));
     }
+
+    public function testGetSearchReturnsNullWhenNotPresent(): void
+    {
+        $input = [];
+
+        $request = new Request($input);
+
+        $requestInput = new RequestInput($request);
+
+        $this->assertNull($requestInput->getSearch());
+    }
+
+    public function testGetOrdersReturnsNullWhenNotPresent(): void
+    {
+        $input = [];
+
+        $request = new Request($input);
+
+        $requestInput = new RequestInput($request);
+
+        $this->assertNull($requestInput->getOrders());
+    }
+
+    public function testGetColumnsReturnsNullWhenNotPresent(): void
+    {
+        $input = [];
+
+        $request = new Request($input);
+
+        $requestInput = new RequestInput($request);
+
+        $this->assertNull($requestInput->getColumns());
+    }
 }

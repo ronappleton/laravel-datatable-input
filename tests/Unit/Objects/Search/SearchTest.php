@@ -50,4 +50,11 @@ class SearchTest extends TestCase
 
         $this->assertSame('testMacro', $search->testMacro());
     }
+
+    public function testSearchToArrayReturnsSearchArray(): void
+    {
+        $search = new Search(['value' => 'testValue', 'regex' => 'true']);
+
+        $this->assertSame(['value' => 'testValue', 'regex' => 'true'], $search->toArray());
+    }
 }

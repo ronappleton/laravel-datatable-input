@@ -73,4 +73,11 @@ class OrderTest extends TestCase
 
         $this->assertEquals('macro_fired', $order->testMacro());
     }
+
+    public function testOrderToArrayReturnsCorrectData(): void
+    {
+        $order = new Order(['column' => 1, 'dir' => 'asc']);
+
+        $this->assertEquals(['column' => 1, 'dir' => 'asc'], $order->toArray());
+    }
 }
