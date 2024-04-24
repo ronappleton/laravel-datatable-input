@@ -30,7 +30,7 @@
         "orchestra/testbench": "^8.22"
     },
     "scripts": {
-        "test": "phpunit --bootstrap vendor/autoload.php tests/ --colors=always --coverage-text --coverage-html=coverage.xml",
+        "test": "phpunit --bootstrap vendor/autoload.php tests/ --colors=always",
         "stan": "php vendor/bin/phpstan analyse src"
     }
 }
